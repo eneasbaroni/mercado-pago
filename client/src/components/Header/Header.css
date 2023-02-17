@@ -1,0 +1,127 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;  
+  background-color: var(--main-bg);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);    
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);  
+  z-index: 60;
+}
+
+.header img {
+  height: 2.5rem;  
+  filter: var(--main-filter)
+}
+
+.navbar {
+  grid-column: 2 / span 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;  
+  padding: 1rem;
+}
+
+.navbar a {
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  color: var(--second-color);
+}
+
+.header .cartIcon {  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.header .cartIcon img {
+  height: 1.2rem;
+  filter: var(--main-filter)   
+}
+
+.burgerMenu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.line1 {
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--main-color);
+  margin: 3px 0;
+}
+
+.line2 {
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--main-color);
+  margin: 3px 0;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 767px) {
+  .header .cartIcon {
+    grid-column: 12 / span 1; 
+    padding: 1.5rem 0;   
+  }
+  
+  .header .cartIcon img {
+    position: fixed;   
+    right: calc(100vw / 24 - 0.75rem);
+    bottom: 1rem;
+  }  
+
+}
+
+@media screen and (max-width: 576px) {  
+  .navbar {    
+    display: flex;
+    flex-direction: column;    
+  }
+
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s ease-in-out;
+}
+
+.mobileMenu div{  
+  border-bottom: 1px solid var(--main-border);
+  height: 3.5rem;
+  margin: 2rem auto;
+  width: 80%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+}
+
+.mobileMenu a{
+  font-size: 4rem;
+  font-weight: 100;
+  text-decoration: none;
+  font-style: italic;  
+  font-family: 'Baskervville', serif; 
+  text-align: center;  
+}

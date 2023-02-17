@@ -1,0 +1,115 @@
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.catalog section {
+  grid-column: 2 / span 10;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);    
+  gap: 0.5rem;  
+}
+
+.catalog section h1 {
+  grid-column: 1 / span 10;
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.catalogContainer {
+  grid-column: 1 / span 10;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);  
+}
+
+.catalogContainer > *:nth-child(1), .catalogContainer > *:nth-child(4) {
+  border-right: 1px solid var(--main-border);  
+}
+
+.catalogContainer > *:nth-child(3), .catalogContainer > *:nth-child(6) {
+  border-left: 1px solid var(--main-border);  
+}
+
+.productContainer {
+  grid-column: auto / span 4; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;  
+  margin: 2rem auto; 
+  padding: 0 4rem; 
+}
+
+
+.productContainer img {
+  width: 100%;
+  height: 30vw;
+  border-radius: 50vw 50vw 0 0;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+}
+
+.productTitles {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.productTitles h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'Baskervville', serif;
+  margin: 0;
+}
+
+.productTitles a {
+  border-radius: 0; 
+  border: none;  
+  background-color: var(--main-bg);
+  text-decoration: none;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 991px) { 
+  .productContainer {
+    grid-column: auto / span 6; 
+  }
+  
+  .catalogContainer > *:nth-child(1), .catalogContainer > *:nth-child(4) {
+    border-right: none;  
+  }
+
+  .catalogContainer > *:nth-child(3), .catalogContainer > *:nth-child(6) {
+    border-left: none;  
+  }
+
+  .catalogContainer > *:nth-child(even) {
+    border-left: 1px solid var(--main-border);  
+  }  
+
+} 
+
+@media screen and (max-width: 766px) {  
+
+  .productContainer {
+    grid-column: auto / span 12; 
+  }
+  .productContainer img {
+    width: 100%;
+    height: 80vw;    
+  }
+
+  .catalogContainer > *:nth-child(even) {
+    border-left: none;  
+  }
+
+}
+
+
